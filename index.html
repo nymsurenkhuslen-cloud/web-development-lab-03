@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лаб 3 - CSS3 Загварчилсан Анкет</title>
+  <!-- 5. Google Fonts холбох -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- 1. External CSS холбох -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="main-title">Оюутны Бүртгэлийн Систем</h1>
+    <nav class="main-nav">
+      <a href="#burtgel" class="nav-link">Бүртгэлийн анкет</a>
+      <a href="#sonirkhol" class="nav-link">Миний сонирхол</a>
+      <a href="#dun" class="nav-link">Миний дүн</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- 4. position: relative агуулсан карт + badge -->
+    <section id="burtgel" class="card">
+      <span class="badge">ЛАБ 03</span>
+      <h2 class="section-title">Хэрэглэгчийн бүртгэлийн анкет</h2>
+
+      <article>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="fullname" class="form-label">Овог, нэр:</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              class="form-input"
+              required
+              minlength="2"
+              pattern="[А-Яа-яӨөҮүЁёA-Za-z\s]+"
+              placeholder="Жишээ: Нямсүрэн Хүслэн"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">И-мэйл хаяг:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+              placeholder="name@example.com"
+            />
+          </div>
+
+          <div class="form-group tooltip-wrapper">
+            <label for="password" class="form-label">Нууц үг (дор хаяж 6 тэмдэгт):</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-input"
+              required
+              minlength="6"
+            />
+            <span class="tooltip-text">Хамгийн багадаа 6 тэмдэгт оруулна уу</span>
+          </div>
+
+          <div class="form-group">
+            <label for="birthdate" class="form-label">Төрсөн огноо:</label>
+            <input
+              type="date"
+              id="birthdate"
+              name="birthdate"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="avatar" class="form-label">Цээж зураг / Файл:</label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              class="form-input"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="course" class="form-label">Хөтөлбөр / Анги:</label>
+            <select id="course" name="course" class="form-input" required>
+              <option value="">-- Сонгоно уу --</option>
+              <option value="it">Мэдээллийн технологи</option>
+              <option value="cs">Компьютерийн ухаан</option>
+              <option value="is">Мэдээллийн систем</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <span class="form-label">Хүйс:</span>
+            <label class="inline-option">
+              <input type="radio" name="gender" value="male" required /> Эрэгтэй
+            </label>
+            <label class="inline-option">
+              <input type="radio" name="gender" value="female" /> Эмэгтэй
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="inline-option">
+              <input type="checkbox" name="terms" required />
+              Үйлчилгээний нөхцөлийг зөвшөөрч байна
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="note" class="form-label">Нэмэлт мэдээлэл:</label>
+            <textarea
+              id="note"
+              name="note"
+              rows="4"
+              class="form-input"
+              minlength="5"
+              required
+              placeholder="Өөрийн тухай товч бичнэ үү..."
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Бүртгүүлэх</button>
+        </form>
+      </article>
+    </section>
+
+    <section id="sonirkhol" class="card">
+      <h2 class="section-title">Миний сонирхол</h2>
+      <ul class="interest-list">
+        <li>Веб хөгжүүлэлт ба UI/UX дизайн</li>
+        <li>Мэдээллийн аюулгүй байдал ба криптограф</li>
+        <li>Линукс систем ба хувилбар хяналт</li>
+      </ul>
+    </section>
+
+    <section id="dun" class="card">
+      <h2 class="section-title">Миний дүн</h2>
+      <table class="grade-table">
+        <thead>
+          <tr>
+            <th>Хичээлийн нэр</th>
+            <th>Дүн</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Веб хөгжүүлэлт</td>
+            <td>A</td>
+          </tr>
+          <tr>
+            <td>Мэдээллийн аюулгүй байдал</td>
+            <td>A-</td>
+          </tr>
+          <tr>
+            <td>Үйлдлийн систем</td>
+            <td>B+</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 ЛАБ 3 - CSS3 Basics</p>
+  </footer>
+</body>
+</html>
